@@ -13,13 +13,13 @@ public class ECommerceDBContext:DbContext
 
     public override int SaveChanges()
     {
-        presaveChanges();
+        preSaveChanges();
         return base.SaveChanges();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
-        presaveChanges();
+        preSaveChanges();
         return base.SaveChangesAsync(cancellationToken);
     }
 
@@ -27,7 +27,7 @@ public class ECommerceDBContext:DbContext
     public DbSet<Product> Products { get; set; }
     public DbSet<Order> Orders { get; set; }
 
-    private void presaveChanges()
+    private void preSaveChanges()
     {
         IEnumerable<EntityEntry<IBaseEntity>> entities = ChangeTracker.Entries<IBaseEntity>();
 

@@ -19,7 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ECommerce.DataAccess\ECommerce.DataAccess.csproj" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0" />
     </ItemGroup>
+
 
 </Project>
