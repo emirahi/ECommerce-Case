@@ -15,7 +15,7 @@ public static class GlobalConfigurations
             .AddJsonFile("appsettings.json", optional: false)
             .Build();
         
-        return config["ConnectionString"];
+        return config["Mysql"];
     }
     
 }
