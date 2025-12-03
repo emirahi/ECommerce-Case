@@ -17,7 +17,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<UserDtoValidation>();
 builder.Services.AddAutoMapper(conf => conf.AddMaps(typeof(UserManager).Assembly));
 
 string? connectionString = GlobalConfigurations.GetConnectionString();
-if (!string.IsNullOrEmpty(connectionString))
+if (string.IsNullOrEmpty(connectionString))
     throw new Exception("Connection string not configured");
 
 builder.Services.AddDbContext<ECommerceDBContext>(options =>
